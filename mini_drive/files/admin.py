@@ -1,3 +1,10 @@
 from django.contrib import admin
+from files.models import TextFile
 
-# Register your models here.
+
+@admin.register(TextFile)
+class TextFileAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'name', 'data')
+    search_fields = ('name',)
+    list_filter = ('pub_date')
+    empty_value_display = '-пусто-'
