@@ -1,11 +1,14 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 
 class TextFile(models.Model):
     name = models.CharField(
         max_length=56,
         verbose_name='Имя файла',
-        help_text='Добавьте название вашего файла'
+        help_text='Добавьте название вашего файла',
+        unique=True,
+        validators=[RegexValidator(regex=r'^[A-Za-zА-Яа-я0-9_]+\.txt$')]
     )
     data = models.TextField(
         verbose_name='Содержимое файла'
