@@ -130,6 +130,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# API VERSION
+API_VERSION = 'v1'
 
 # Settings For Google API
 
