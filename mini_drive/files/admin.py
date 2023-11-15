@@ -6,5 +6,5 @@ from files.models import TextFile
 class TextFileAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name', 'data')
     search_fields = ('name',)
-    list_filter = ('pub_date')
+    list_filter = ('pub_date',)
     empty_value_display = '-пусто-'
