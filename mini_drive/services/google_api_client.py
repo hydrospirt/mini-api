@@ -1,5 +1,5 @@
 from django.conf import settings
-from google.oauth2.credentials import Credentials
+from google.oauth2.service_account import Credentials
 from googleapiclient import discovery
 
 SCOPES = [
@@ -8,7 +8,7 @@ SCOPES = [
 ]
 
 
-CREDS = Credentials.from_authorized_user_info(
+CREDS = Credentials.from_service_account_info(
     scopes=SCOPES, info=settings.INFO
 )
 
