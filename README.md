@@ -90,6 +90,7 @@ http://127.0.0.1:8000/api/v1/txt/ # Основная ссылка API
 
 Скриншоты работы приложения:
 > На стадии разработки.
+
 Пример POST запроса и ответа от Django Rest Framework
 ![POST](https://github.com/hydrospirt/mini-api/blob/master/examples/1.png)
 Пример работы системы логирования
