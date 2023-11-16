@@ -1,4 +1,5 @@
 from django.conf import settings
+from mini_drive.settings import logger
 from services.google_api_client import DOCS_SERVICE, DRIVE_SERVICE
 
 
@@ -25,10 +26,10 @@ def create_textfile(name, data):
         ]
     }
     DOCS_SERVICE.documents().batchUpdate(documentId=document_id, body=doc_content).execute()
-    print(f'Created document with title: {document_title}')
-    print('Документ создан ссылка:')
-    print(f'https://docs.google.com/document/d/{document_id}/')
-    print('Содержимое успешно добавлено в документ.')
+    logger.info(f'Создан документ с названием: {document_title}')
+    logger.info('Документ создан ссылка:')
+    logger.info(f'https://docs.google.com/document/d/{document_id}/')
+    logger.info('Содержимое успешно добавлено в документ.')
     return document_id
 
 
