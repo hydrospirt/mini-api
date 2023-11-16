@@ -101,3 +101,11 @@ http://127.0.0.1:8000/api/v1/txt/ # Основная ссылка API
 ![ADMIN](https://github.com/hydrospirt/mini-api/blob/master/examples/4.png)
 # Автор
 Эдуард Гумен - [Cтраница GitHub](https://github.com/hydrospirt)
+
+---
+
+<p style="margin: 0 auto" align="center">© Eduard Gumen :)</p>
+
+<p style="margin: 0 auto" align="center">All rights reserved and no permissions are granted.</p>
+
+<p style="margin: 0 auto" align="center">Please add stars to the repositories!</p>
