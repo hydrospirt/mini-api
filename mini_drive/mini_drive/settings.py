@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import logging
 import os
 from pathlib import Path
 
@@ -149,3 +150,43 @@ INFO = {
     'auth_provider_x509_cert_url': os.environ['AUTH_PROVIDER_X509_CERT_URL'],
     'client_x509_cert_url': os.environ['CLIENT_X509_CERT_URL']
 }
+
+# For logging
+os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
+LOGS_DIR = os.path.join(BASE_DIR, "logs", "api_docs.log")
+FORMAT_LOGRECORD = (
+    "%(asctime)s [%(levelname)s] %(message)s, "
+    "%(funcName)s: %(lineno)s"
+)
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "main_format": {
+            "format": FORMAT_LOGRECORD,
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "main_format",
+        },
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "formatter": "main_format",
+            "filename": LOGS_DIR,
+            "mode": "w",
+            "encoding": "utf-8",
+            "backupCount": 5,
+            "maxBytes": 4999999
+        },
+    },
+    "loggers": {
+        "main": {
+            "handlers": ["console", "file"],
+            "level": "INFO" if not DEBUG else "DEBUG",
+            "propagrate": True,
+        },
+    },
+}
+logger = logging.getLogger("main")
