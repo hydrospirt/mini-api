@@ -90,6 +90,13 @@ http://127.0.0.1:8000/api/v1/txt/ # Основная ссылка API
 
 Скриншоты работы приложения:
 > На стадии разработки.
-
+Пример POST запроса и ответа от Django Rest Framework
+![POST](https://github.com/hydrospirt/mini-api/blob/master/examples/1.png)
+Пример работы системы логирования
+![LOGGER](https://github.com/hydrospirt/mini-api/blob/master/examples/2.png)
+Пример отображения созданного документа в Google Docs
+![Docs]https://github.com/hydrospirt/mini-api/blob/master/examples/3.png
+Снимок админ панели в Django
+![ADMIN](https://github.com/hydrospirt/mini-api/blob/master/examples/4.png)
 # Автор
 Эдуард Гумен - [Cтраница GitHub](https://github.com/hydrospirt)
